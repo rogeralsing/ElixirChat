@@ -1,27 +1,23 @@
 defmodule Server do
-  def run() do
-    spawn(fn -> act({MapSet.new()}) end)
+  import Util
+
+  def run do
+    spawn fn -> loop %{clients: MapSet.new} end
   end
 
-  defp notify(clients,message) do
-    for client <- clients  do
-      send client, message
-    end
-  end
-
-  defp act(state) do
-    {clients} = state
+  defp loop state do
+    clients = state.clients
     receive do
-      {:connect,userName,clientPID} ->
-        notify(clients,{:connect,userName})
-        send clientPID,{:welcome,userName}
-        act({MapSet.put(clients, clientPID)})
+      {:connect,userName,client} ->
+        send_all clients,{:connect,userName}
+        send client,{:welcome,userName}
+        loop %{state | clients: MapSet.put(clients, client)}
       {:say,userName,message} ->
-        notify(clients,{:say,userName,message})
-        act(state)
+        send_all clients,{:say,userName,message}
+        loop state
       {:nick,oldUserName,newUserName} ->
-        notify(clients,{:nick,oldUserName,newUserName})
-        act(state)
+        send_all clients,{:nick,oldUserName,newUserName}
+        loop state
     end
   end
 end
