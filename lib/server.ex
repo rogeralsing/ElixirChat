@@ -1,8 +1,9 @@
-defmodule Server do
-  import Util
+defmodule Chat.Server do
+  import Chat.Util
 
   def run do
     spawn fn -> loop %{clients: MapSet.new} end
+
   end
 
   defp loop state do

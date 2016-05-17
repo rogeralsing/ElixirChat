@@ -1,4 +1,4 @@
-defmodule ClientWriter do
+defmodule Chat.ClientWriter do
   def run do
     spawn fn -> loop end
   end

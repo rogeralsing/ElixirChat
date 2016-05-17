@@ -1,4 +1,4 @@
-defmodule ClientReader do
+defmodule Chat.ClientReader do
 
   def run server,clientWriter do
     nick = "Roger"
@@ -11,7 +11,7 @@ defmodule ClientReader do
       "/nick " <> newNick ->
         send state.server, {:nick,state.nick,newNick}
         loop %{state | nick: newNick}
-      "/quit" -> {}
+      "/quit" -> []
       "/" <> command ->
         IO.puts "Unknown command #{command}"
         loop state
