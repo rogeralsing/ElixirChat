@@ -1,24 +1,24 @@
 defmodule Chat.ClientReader do
 
-  def run server,clientWriter do
+  def run server,client_writer do
     nick = "Roger"
-    send server, {:connect,nick,clientWriter}
-    loop %{server: server,nick: nick}
+    send server, {:connect,nick,client_writer}
+    loop server, nick
   end
 
-  defp loop state do
+  defp loop server, nick do
     case IO.gets(">") |> String.strip do
-      "/nick " <> newNick ->
-        send state.server, {:nick,state.nick,newNick}
-        loop %{state | nick: newNick}
+      "/nick " <> new_username ->
+        send server, {:nick,nick,new_username}
+        loop server, new_username
       "/quit" -> []
       "/" <> command ->
         IO.puts "Unknown command #{command}"
-        loop state
-      "" -> loop state
+        loop server, nick
+      "" -> loop server, nick
       text ->
-        send state.server, {:say,state.nick,text}
-        loop state
+        send server, {:say,nick,text}
+        loop server, nick
     end
   end
 end

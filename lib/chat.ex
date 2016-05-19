@@ -1,7 +1,7 @@
 defmodule Chat do
   def main() do
-    server = Server.run
-    clientWriter = ClientWriter.run
-    ClientReader.run server, clientWriter
+    server = Chat.Server.run
+    client_writer = Chat.ClientWriter.run
+    Chat.ClientReader.run server, client_writer
   end
 end

@@ -5,10 +5,10 @@ defmodule Chat.ClientWriter do
 
   defp loop do
     receive do
-      {:welcome,userName} -> IO.puts "Welcome #{userName}"
-      {:connect,userName} -> IO.puts "#{userName} joined"
-      {:say,userName,message} -> IO.puts "#{userName}: #{message}"
-      {:nick,oldUserName,newUserName} -> IO.puts "#{oldUserName} changed nick to #{newUserName}"
+      {:welcome,username}                -> IO.puts "Welcome #{username}"
+      {:connect,username}                -> IO.puts "#{username} joined"
+      {:say,username,message}            -> IO.puts "#{username}: #{message}"
+      {:nick,old_username,new_username} -> IO.puts "#{old_username} changed nick to #{new_username}"
     end
     loop
   end
