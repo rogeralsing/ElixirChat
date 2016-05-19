@@ -4,4 +4,9 @@ defmodule Chat do
     client_writer = Chat.ClientWriter.run
     Chat.ClientReader.run server, client_writer
   end
+
+  def start(_type, _args) do
+    main()
+  end
+
 end
