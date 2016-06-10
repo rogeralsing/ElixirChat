@@ -1,24 +1,24 @@
 defmodule Chat.ClientReader do
 
-  def run server,client_writer do
+  def run client_writer do
     nick = "Roger"
-    GenServer.cast server, {:connect,nick,client_writer}
-    loop server, nick
+    Server.connect(nick, client_writer)
+    loop nick
   end
 
-  defp loop server, nick do
+  defp loop nick do
     case IO.gets(">") |> String.strip do
       "/nick " <> new_username ->
-        GenServer.cast server, {:nick,nick,new_username}
-        loop server, new_username
+        Server.nick(nick,new_username)
+        loop new_username
       "/quit" -> []
       "/" <> command ->
         IO.puts "Unknown command #{command}"
-        loop server, nick
-      "" -> loop server, nick
+        loop nick
+      "" -> loop nick
       text ->
-        GenServer.cast server, {:say,nick,text}
-        loop server, nick
+        Server.say(nick,text)
+        loop nick
     end
   end
 end

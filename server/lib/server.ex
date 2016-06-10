@@ -27,6 +27,11 @@ defmodule ChatServer do
     {:noreply, clients}
   end
 
+  def handle_cast(any, clients) do
+    IO.puts "Unknown #{any}"
+    {:noreply, clients}
+  end
+
   defp send_all clients,message do
     for client <- clients do
       send client, message

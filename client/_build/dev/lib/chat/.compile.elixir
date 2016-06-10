@@ -4,13 +4,18 @@ v2.
  ['Elixir.Kernel'],
  [erlang,'Elixir.String.Chars','Elixir.IO'],
  [],nil}.
+{<<"_build/dev/lib/chat/ebin/Elixir.Server.beam">>,'Elixir.Server',module,
+ <<"lib/server.ex">>,
+ ['Elixir.Kernel'],
+ ['Elixir.GenServer'],
+ [],nil}.
 {<<"_build/dev/lib/chat/ebin/Elixir.Chat.beam">>,'Elixir.Chat',module,
  <<"lib/chat.ex">>,
  ['Elixir.Kernel'],
- ['Elixir.Node','Elixir.Chat.ClientReader','Elixir.Chat.ClientWriter'],
+ ['Elixir.Node',global,'Elixir.Chat.ClientReader','Elixir.Chat.ClientWriter'],
  [],nil}.
 {<<"_build/dev/lib/chat/ebin/Elixir.Chat.ClientReader.beam">>,
  'Elixir.Chat.ClientReader',module,<<"lib/clientreader.ex">>,
  ['Elixir.Kernel'],
- ['Elixir.IO','Elixir.String.Chars','Elixir.GenServer','Elixir.String'],
+ ['Elixir.Server','Elixir.IO','Elixir.String.Chars','Elixir.String'],
  [],nil}.
