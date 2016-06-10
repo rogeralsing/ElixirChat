@@ -1,0 +1,16 @@
+v2.
+{<<"_build/dev/lib/chat/ebin/Elixir.Chat.ClientWriter.beam">>,
+ 'Elixir.Chat.ClientWriter',module,<<"lib/clientwriter.ex">>,
+ ['Elixir.Kernel'],
+ [erlang,'Elixir.String.Chars','Elixir.IO'],
+ [],nil}.
+{<<"_build/dev/lib/chat/ebin/Elixir.Chat.beam">>,'Elixir.Chat',module,
+ <<"lib/chat.ex">>,
+ ['Elixir.Kernel'],
+ ['Elixir.Node','Elixir.Chat.ClientReader','Elixir.Chat.ClientWriter'],
+ [],nil}.
+{<<"_build/dev/lib/chat/ebin/Elixir.Chat.ClientReader.beam">>,
+ 'Elixir.Chat.ClientReader',module,<<"lib/clientreader.ex">>,
+ ['Elixir.Kernel'],
+ ['Elixir.IO','Elixir.String.Chars','Elixir.GenServer','Elixir.String'],
+ [],nil}.
