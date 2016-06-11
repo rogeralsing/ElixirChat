@@ -1,6 +1,6 @@
 v2.
 {<<"_build/dev/lib/chat/ebin/Elixir.ChatServer.beam">>,'Elixir.ChatServer',
  module,<<"lib/server.ex">>,
- ['Elixir.Kernel','Elixir.Module','Elixir.GenServer'],
- ['Elixir.MapSet',erlang,'Elixir.IO','Elixir.String.Chars'],
+ ['Elixir.Module','Elixir.GenServer','Elixir.Kernel'],
+ [erlang,'Elixir.String.Chars','Elixir.MapSet','Elixir.IO'],
  [],nil}.
