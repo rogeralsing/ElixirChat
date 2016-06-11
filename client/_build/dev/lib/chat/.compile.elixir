@@ -1,8 +1,8 @@
 v2.
-{<<"_build/dev/lib/chat/ebin/Elixir.Chat.ClientWriter.beam">>,
- 'Elixir.Chat.ClientWriter',module,<<"lib/clientwriter.ex">>,
+{<<"_build/dev/lib/chat/ebin/Elixir.Chat.ClientReader.beam">>,
+ 'Elixir.Chat.ClientReader',module,<<"lib/clientreader.ex">>,
  ['Elixir.Kernel'],
- [erlang,'Elixir.String.Chars','Elixir.IO'],
+ [erlang,'Elixir.IO','Elixir.String.Chars','Elixir.Server','Elixir.String'],
  [],nil}.
 {<<"_build/dev/lib/chat/ebin/Elixir.Server.beam">>,'Elixir.Server',module,
  <<"lib/server.ex">>,
@@ -12,10 +12,10 @@ v2.
 {<<"_build/dev/lib/chat/ebin/Elixir.Chat.beam">>,'Elixir.Chat',module,
  <<"lib/chat.ex">>,
  ['Elixir.Kernel'],
- ['Elixir.Node',global,'Elixir.Chat.ClientReader','Elixir.Chat.ClientWriter'],
+ ['Elixir.Chat.ClientReader','Elixir.Node',global,'Elixir.Chat.ClientWriter'],
  [],nil}.
-{<<"_build/dev/lib/chat/ebin/Elixir.Chat.ClientReader.beam">>,
- 'Elixir.Chat.ClientReader',module,<<"lib/clientreader.ex">>,
+{<<"_build/dev/lib/chat/ebin/Elixir.Chat.ClientWriter.beam">>,
+ 'Elixir.Chat.ClientWriter',module,<<"lib/clientwriter.ex">>,
  ['Elixir.Kernel'],
- ['Elixir.Server','Elixir.IO','Elixir.String.Chars','Elixir.String'],
+ [erlang,'Elixir.IO','Elixir.String.Chars'],
  [],nil}.

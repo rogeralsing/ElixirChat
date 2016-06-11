@@ -5,11 +5,21 @@ defmodule Chat.ClientWriter do
 
   defp loop do
     receive do
-      {:welcome,username}                -> IO.puts "Welcome #{username}"
-      {:connect,username}                -> IO.puts "#{username} joined"
-      {:say,username,message}            -> IO.puts "#{username}: #{message}"
-      {:nick,old_username,new_username}  -> IO.puts "#{old_username} changed nick to #{new_username}"
+      any -> handle(any)
     end
     loop
   end
+
+  defp handle({:welcome,username}), do:
+    IO.puts "Welcome #{username}"
+
+  defp handle({:connect,username}), do:
+    IO.puts "#{username} joined"
+
+  defp handle({:say,username,message}), do:
+    IO.puts "#{username}: #{message}"
+
+  defp handle({:nick,old_username,new_username}), do:
+    IO.puts "#{old_username} changed nick to #{new_username}"
+
 end
