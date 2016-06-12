@@ -10,12 +10,6 @@ defmodule Chat.ClientWriter do
     loop
   end
 
-  defp handle({:history,history}) do
-    for l <- history do
-      IO.puts l
-    end
-  end
-
   defp handle({:welcome,username}) do
     IO.puts "Welcome #{username}"
   end
