@@ -61,15 +61,5 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
-  </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="Elixir 1.2.5" project-jdk-type="Elixir SDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" project-jdk-name="Unknown Elixir version at C:/Program Files (x86)/Elixir" project-jdk-type="Elixir SDK" />
 </project>

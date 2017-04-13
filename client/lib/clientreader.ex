@@ -1,11 +1,11 @@
 defmodule Chat.ClientReader do
 
-  def run username, client_writer do
+  def run(username, client_writer) do
     Server.connect(username, client_writer)
     repl username
   end
 
-  defp repl username do
+  defp repl(username) do
     IO.gets(">")
     |> String.strip
     |> handle(username)

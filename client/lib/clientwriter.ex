@@ -1,13 +1,13 @@
 defmodule Chat.ClientWriter do
   def run do
-    spawn fn -> loop end
+    spawn fn -> loop() end
   end
 
   defp loop do
     receive do
       any -> handle(any)
     end
-    loop
+    loop()
   end
 
   defp handle({:welcome,username}) do
